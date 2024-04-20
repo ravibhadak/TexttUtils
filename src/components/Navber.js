@@ -28,7 +28,7 @@ export default function Navber(props) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link active" href="/">
                   {props.aboutext}
                 </a>
               </li>
