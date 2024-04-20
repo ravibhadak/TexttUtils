@@ -29,31 +29,32 @@ export default function TextForm(props) {
   const [text, setText] = useState(" ");
   return (
     <>
-      <div className="container my-3 border border-dark rounded">
+      <div className={`container my-3 border border-${{border: props.mode === 'dark'?'white':'black'}} rounded`} style={{color:props.mode === 'dark'?'white':'black'}}>
         <h1>{props.heading}</h1>
         <textarea
           className="form-control"
+          style={{backgroundColor:props.mode === 'dark'?'#31363F':'white', color:props.mode === 'dark'?'white':'black'}}
           value={text}
           onChange={handleonchange}
           id="myBox"
           rows="10"
         ></textarea>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
+        <button className={`btn btn-${props.mode === 'light'?'primary':'light'} mx-2 my-2`} onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handlelpClick}>
+        <button className={`btn btn-${props.mode === 'light'?'primary':'light'} mx-2 my-2`} onClick={handlelpClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleCpoy}>
+        <button className={`btn btn-${props.mode === 'light'?'primary':'light'} mx-2 my-2`} onClick={handleCpoy}>
           Cpoy Text
         </button>
         <button
-          className="btn btn-primary mx-2 my-2"
+          className={`btn btn-${props.mode === 'light'?'primary':'light'} mx-2 my-2`}
           onClick={handleExtraSpaces}>
           Extra Spaces
         </button>
       </div>
-      <div className="container my-2 border border-primary">
+      <div className="container my-2 border border-primary" style={{color:props.mode === 'dark'?'white':'black'}}>
         <h1 className="text-center border-bottom border-primary">
           Your text summary
         </h1>
